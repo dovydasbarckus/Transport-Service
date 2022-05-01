@@ -85,7 +85,7 @@ class Order(models.Model):
         return invoice
 
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE, blank=True, null=True)
-    date_ordered = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    date_ordered = models.DateField("Invoice issued", null=True, blank=True)
     invoice = models.CharField(max_length=100, null=True, blank=True, default=number_default_function)
 
     @property
@@ -124,8 +124,8 @@ class OrderItem(models.Model):
     trailer = models.ForeignKey(Trailer, on_delete=models.SET_NULL, blank=True, null=True)
     driver = models.ForeignKey(Driver, on_delete=models.SET_NULL, blank=True, null=True)
     delivery_address = models.ForeignKey(DeliveryAddress, on_delete=models.SET_NULL, blank=True, null=True)
-    date_delivery = models.DateTimeField(auto_now_add=True, null=True, blank=True)
-    date_loading = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    date_delivery = models.DateField("Date Delivery", null=True, blank=True)
+    date_loading = models.DateField("Date Loading", null=True, blank=True)
     delivery_price = models.FloatField(null=True, blank=True)
     quantity = models.IntegerField(default=1, null=True, blank=True)
     information = models.TextField(max_length=200, null=True, blank=True)

@@ -15,7 +15,7 @@ class OrderForm(forms.ModelForm):
         widgets = {
             'invoice': forms.TextInput(attrs={'class': 'form-control'}),
             'customer': forms.Select(attrs={'class': 'form-control'}),
-            'date_ordered': forms.DateInput(attrs={'class': 'form-control'}),
+            'date_ordered': DateInput(attrs={'class': 'form-control'}),
         }
 
 
@@ -93,9 +93,6 @@ class CustomerForm(forms.ModelForm):
         }
 
 
-
-
-
 class OrderItemForm(forms.ModelForm):
     class Meta:
         model = OrderItem
@@ -107,8 +104,8 @@ class OrderItemForm(forms.ModelForm):
             'trailer': forms.Select(attrs={'class': 'form-control'}),
             'driver': forms.Select(attrs={'class': 'form-control'}),
             'delivery_address': forms.Select(attrs={'class': 'form-control'}),
-            'date_delivery': forms.DateInput(attrs={'class': 'form-control'}),
-            'date_loading': forms.DateInput(attrs={'class': 'form-control'}),
+            'date_delivery': DateInput(attrs={'class': 'form-control'}),
+            'date_loading': DateInput(attrs={'class': 'form-control'}),
             'delivery_price': forms.NumberInput(attrs={'class': 'form-control'}),
             'quantity': forms.NumberInput(attrs={'class': 'form-control'}),
             'information': forms.Textarea(attrs={'class': 'form-control'}),

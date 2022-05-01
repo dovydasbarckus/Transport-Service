@@ -323,11 +323,3 @@ def profile(request):
     }
     return render(request, 'profile.html', context)
 
-
-class FilesCreateView(LoginRequiredMixin, CreateView):
-    model = OrderItem
-    form_class = FilesForm
-    template_name = 'files.html'
-
-    def get_success_url(self):
-        return reverse('orderlines_details', kwargs={'pk': self.object.id})
