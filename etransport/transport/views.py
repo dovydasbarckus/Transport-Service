@@ -5,6 +5,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse
 from django.shortcuts import render, redirect
 from .forms import *
+from .email import SendEmail
+
 from django.views.generic import (
     ListView,
     DetailView,
@@ -14,7 +16,16 @@ from django.views.generic import (
 
 
 def home(request):
-    return render(request, 'home.html')
+    if request.method == 'POST':
+        name = request.POST['fName']
+        surname = request.POST['lName']
+        email = request.POST['email']
+        phone = request.POST['phone']
+        question = request.POST['question']
+        SendEmail(name, surname, email, phone, question)
+        return redirect('home')
+    else:
+        return render(request, 'home.html')
 
 
 class OrderListView(LoginRequiredMixin, ListView):
