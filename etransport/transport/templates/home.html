@@ -1,0 +1,390 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top d-flex justify-content-end" style="z-index:4;">
+    <div class="mx-5" >
+      <a href="#" class="navbar-brand">Agile Transport System</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navmenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a href="#ask" class="nav-link">Questions</a>
+          </li>
+          <li class="nav-item">
+            <a href="#team" class="nav-link">Our Team</a>
+          </li>
+          <li class="nav-item">
+            <a href="#contacts" class="nav-link">Contacts</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <section class="bg-dark text-light p-5 text-center text-sm-start p-lg-0 pt-lg-5">
+    <div class="container pt-5">
+      <div class="d-sm-flex align-items-center justify-content-between">
+        <div>
+          <h1>Leading Transport Company</h1>
+          <p class="lead my-4">New Transport Company with new Ideas, New People and of course: <span class="text-warning">With you!</span></h1></p>
+          <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#enroll">Write to us</button>
+        </div>
+        <img class="img-fluid w-50 d-none d-sm-block" src="{% static 'images/office.png' %}" alt="office">
+      </div>
+    </div>
+  </section>
+
+        <section class="p-5">
+          <div class="container">
+            <div class="row text-center g-4">
+              <div class="col-md">
+                <div class="card bg-dark text-light">
+                  <div class="card-body text-center">
+                    <div >
+                      <img class="img-fluid" style="height: 250px" src="{% static 'images/truck.jpg' %}" alt="office">
+                    </div>
+                    <h3 class="card-title my-3">Sea Transport</h3>
+                    <p class="card-text">
+                    Sea transport was the main vehicle of international commerce for centuries and is still a popular mode of transportation due to factors such as high load capacity, low cost, and reliability in bad weather.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md">
+                <div class="card bg-secondary text-light">
+                  <div class="card-body text-center">
+                    <div >
+                      <img class="img-fluid" style="height: 250px"  src="{% static 'images/ship.jpg' %}" alt="office">
+                    </div>
+                    <div >
+                      <h3 class="card-title my-3">Land Transport</h3>
+                      <p class="card-text"> We can offer all transport variants from carrying general cargo, containers, oversized cargo
+                      and much more...
+                      <p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md">
+                <div class="card bg-dark text-light">
+                  <div class="card-body text-center">
+                    <div >
+                      <img class="img-fluid" style="height: 250px" src="{% static 'images/customs.jpg' %}" alt="office">
+                    </div>
+                    <div>
+                    <h3 class="card-title my-3">Custom Clearance</h3>
+                    <p class="card-text">
+                      Customs clearance for the goods from the countries outside the EU: we prepare and fill in the set of common administrative documents for import and we represent the client at customs.
+                    </p>
+                     </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+   <section id="learn" class="p-5">
+      <div class="container">
+        <div class="row align-items-center justify-content-between">
+          <div class="col-md ">
+            <img src="{% static 'images/people.jpg' %}" class="img-fluid rounded" alt="company"/>
+          </div>
+          <div class="col-md p-5">
+            <h2>About our Company</h2>
+            <p class="lead">
+              We can make all transport routes, we like to discuss and help our clients to find best options for fast and cheap deliveries.
+            </p>
+            <p>
+             Also An experienced team of qualified customs brokers ensures that customs procedures are followed and processed quickly and efficiently. All the logistic services are coordinated by the Logistics and Transit Centre team.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Question Accordion -->
+    <section id="ask" class="p-5 ">
+      <div class="container">
+        <h2 class="text-center mb-4 mt-5">Frequently Asked Questions</h2>
+        <div class="accordion accordion-flush" id="questions">
+          <!-- Item 1 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#question-one"
+              >
+                What Land routes yu can offer?
+              </button>
+            </h2>
+            <div
+              id="question-one"
+              class="accordion-collapse collapse"
+              data-bs-parent="#questions"
+            >
+              <div class="accordion-body">
+                Baltic countries, Belarus, Poland, Germany.
+              </div>
+            </div>
+          </div>
+          <!-- Item 2 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#question-two"
+              >
+                What customs clearance you can make?
+              </button>
+            </h2>
+            <div
+              id="question-two"
+              class="accordion-collapse collapse"
+              data-bs-parent="#questions"
+            >
+              <div class="accordion-body">
+                Export, Import, Tranzit, T2L declarations, EUR1 Certifications and much more.
+              </div>
+            </div>
+          </div>
+          <!-- Item 3 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#question-three"
+              >
+                Can you help us with Phytosanitary and Veterinary Certifications and clearance?
+              </button>
+            </h2>
+            <div
+              id="question-three"
+              class="accordion-collapse collapse"
+              data-bs-parent="#questions"
+            >
+              <div class="accordion-body">
+                Yes, we can help Phytosanitary and Veterinary Certifications and clearance.
+              </div>
+            </div>
+          </div>
+          <!-- Item 4 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#question-four"
+              >
+                Can you help us with systems like Cargo Stream, Avantida and others transport managing systems.
+              </button>
+            </h2>
+            <div
+              id="question-four"
+              class="accordion-collapse collapse"
+              data-bs-parent="#questions"
+            >
+              <div class="accordion-body">
+                Short us answer - Yes :)
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+    </section>
+
+
+    <section id="team" class="p-5 bg-primary">
+      <div class="container">
+        <h2 class="text-center text-white mt-5">Our Team Members </h2>
+        <p class="lead text-center text-white mb-5">
+          Our team consists of experienced transport managers and customs declarants
+        </p>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3">
+            <div class="card bg-light">
+              <div class="card-body text-center">
+                <img
+                  src="https://randomuser.me/api/portraits/men/18.jpg"
+                  class="rounded-circle mb-3"
+                  alt=""
+                />
+                <h3 class="card-title mb-3">John Doe</h3>
+                <p class="card-text">
+                  Custom agent
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="card bg-light">
+              <div class="card-body text-center">
+                <img
+                  src="https://randomuser.me/api/portraits/women/11.jpg"
+                  class="rounded-circle mb-3"
+                  alt=""
+                />
+                <h3 class="card-title mb-3">Jane Doe</h3>
+                <p class="card-text">
+                 Custom agent
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="card bg-light">
+              <div class="card-body text-center">
+                <img
+                  src="https://randomuser.me/api/portraits/men/12.jpg"
+                  class="rounded-circle mb-3"
+                  alt=""
+                />
+                <h3 class="card-title mb-3">Steve Smith</h3>
+                <p class="card-text">
+                  Transport Manager
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="card bg-light">
+              <div class="card-body text-center">
+                <img
+                  src="https://randomuser.me/api/portraits/women/12.jpg"
+                  class="rounded-circle mb-3"
+                  alt=""
+                />
+                <h3 class="card-title mb-3">Sara Smith</h3>
+                <p class="card-text">
+                  Transport Manager
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+      <section id="contacts" class="p-5">
+        <div class="container">
+          <div class="row g-4">
+            <div class="col-md">
+              <h2 class="text-center mb-4">Contacts</h2>
+              <ul class="list-group list-group-flush lead">
+                <li class="list-group-item">
+                  <span class="fw-bold">Our office:</span> Taikos prospektas 145, Klaipeda, Lithuania
+                </li>
+                <li class="list-group-item">
+                  <span class="fw-bold">Phone:</span> (333) 333-3333
+                </li>
+                <li class="list-group-item">
+                  <span class="fw-bold">Email:</span>
+                  test1@gmail.com
+                 <li class="list-group-item">
+                    <a href="https://twitter.com/"><i class="fa fa-twitter text-dark mx-1"></i></a>
+                    <a href="https://www.facebook.com/"><i class="fa fa-facebook text-dark mx-1"></i></a>
+                    <a href="https://www.linkedin.com/"><i class="fa fa-linkedin text-dark mx-1"></i></a>
+                    <a href="https://www.instagram.com/"><i class="fa fa-instagram text-dark mx-1"></i></a>
+                 </li>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <footer class="p-5 bg-light  position-relative">
+        <div class="container">
+          <p >Copyright &copy; 2022</p>
+          <p>Agile Transport System</p>
+        </div>
+          <div>
+          <a href="#" class="position-absolute text-dark bottom-0 end-0 p-5 my-4">
+            <i class="fa fa-arrow-circle-o-up"></i>
+          </a>
+        </div>
+      </footer>
+  <br>
+
+    <div
+    class="modal fade"
+    id="enroll"
+    tabindex="-1"
+    aria-labelledby="enrollLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="enrollLabel">Providing credentials</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <p class="lead">Fill out this form and we will get back to you as soon as possible</p>
+          <form>
+            <div class="mb-3">
+              <label for="first-name" class="col-form-label">
+                First Name:
+              </label>
+              <input type="text" class="form-control" id="first-name" />
+            </div>
+            <div class="mb-3">
+              <label for="last-name" class="col-form-label">Last Name:</label>
+              <input type="text" class="form-control" id="last-name" />
+            </div>
+            <div class="mb-3">
+              <label for="email" class="col-form-label">Email:</label>
+              <input type="email" class="form-control" id="email" />
+            </div>
+            <div class="mb-3">
+              <label for="phone" class="col-form-label">Phone:</label>
+              <input type="tel" class="form-control" id="phone" />
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Close
+          </button>
+          <button type="button" class="btn btn-primary">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+{% endblock content %}

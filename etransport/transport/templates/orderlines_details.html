@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% csrf_token %}
+{% block content %}
+     <div class="container d-flex flex-row flex-wrap justify-content-around" style="max-width:500px;" >
+         <a class="btn btn-grad my-3" href="{% url 'orderlines_update' orderitem.id %}" style="min-width:100px;">Update</a>
+         <a class="btn btn-grad btn-delete my-3" href="{% url 'order_lines' %}" style="min-width:100px;">Back</a>
+        <a class="btn btn-grad btn-delete my-3" href="{% url 'orderlines_delete' orderitem.id %}" style="min-width:100px;">Delete</a>
+     </div>
+
+   <div class="container d-flex flex-column justify-content-center mb-3" style="max-width:500px;">
+        <h4 class=" mb-5" style="font-style:italic;"></h4>
+        <div class="form-group ">
+        <table class="table table-striped table-bordered stripe " style="width:100%">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Values</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Order ID </td>
+                <td>{{ orderitem.order.id }}</td>
+            </tr>
+            <tr>
+                <td>Company </td>
+                <td>{{ orderitem.order.customer.company }}</td>
+            </tr>
+            <tr>
+                <td>Customer name </td>
+                <td>{{orderitem.order.customer.name }}</td>
+            </tr>
+            <tr>
+                <td>Customer Surname  </td>
+                <td>{{orderitem.order.customer.surname }}</td>
+            </tr>
+            <tr>
+                <td>Phone </td>
+                <td>{{orderitem.order.customer.phone }}</td>
+            </tr>
+            <tr>
+                <td>Email </td>
+                <td>{{orderitem.order.customer.email }}</td>
+            </tr>
+            <tr>
+                <td>Address </td>
+                <td>{{orderitem.order.customer.address }}</td>
+            </tr>
+            <tr>
+                <td>Cargo </td>
+                <td>{{orderitem.cargo.cargo }}</td>
+            </tr>
+            <tr>
+                <td>Weight</td>
+                <td>{{orderitem.cargo.weight}} in tonnes</td>
+            </tr>
+             <tr>
+                <td>Truck</td>
+                <td>{{orderitem.truck}}</td>
+            </tr>
+             <tr>
+                <td>Trailer</td>
+                <td>{{orderitem.trailer}}</td>
+            </tr>
+            <tr>
+                <td>Driver</td>
+                <td>{{orderitem.driver}}</td>
+            </tr>
+             <tr>
+                <td>Delivery address</td>
+                <td>{{orderitem.delivery_address.delivery_address}}</td>
+            </tr>
+             <tr>
+                <td>Loading Address</td>
+                <td>{{orderitem.delivery_address.loading_address}}</td>
+            </tr>
+             <tr>
+                <td>Customs Address</td>
+                <td>{{orderitem.delivery_address.custom_address}}</td>
+            </tr>
+            <tr>
+                <td>Date delivery</td>
+                <td>{{orderitem.date_delivery |date:"Y-m-d "}}</td>
+            </tr>
+             <tr>
+                <td>Date loading</td>
+                <td>{{orderitem.date_loading |date:"Y-m-d "}}</td>
+            </tr>
+             <tr>
+                <td>One trip Price</td>
+                <td>{{orderitem.delivery_price}}</td>
+            </tr>
+             <tr>
+                <td>Trips</td>
+                <td>{{orderitem.quantity}}</td>
+            </tr>
+            <tr>
+                <td>Status</td>
+                <td>{{orderitem.get_status_display}}</td>
+            </tr>
+            <tr>
+                <td>Information</td>
+                <td>{{orderitem.information}}</td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+
+
+
+
+{% endblock content %}
+
+

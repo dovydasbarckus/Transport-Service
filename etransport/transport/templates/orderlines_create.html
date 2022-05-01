@@ -1,0 +1,22 @@
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+    <div class="container d-flex flex-column justify-content-center" style="max-width:500px;">
+        <h4 class=" mb-5" style="font-style:italic;">New Order Line</h4>
+        <div class="form-group ">
+            <form method="post" action="">
+                {% csrf_token %}
+                {{form.as_p}}
+            <div class="d-flex flex-row justify-content-evenly">
+            <button class="btn btn-grad my-3" type="submit" style="min-width:100px">Save</button>
+            <button class="btn btn-grad btn-delete my-3" onclick="javascript:history.back();" style="min-width:100px">Cancel</button>
+            </div>
+            </form>
+        </div>
+    </div>
+
+
+{% endblock content %}

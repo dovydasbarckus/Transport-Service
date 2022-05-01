@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+    <div class="container d-flex flex-column justify-content-center" style="max-width:500px; height:80vh">
+        <div class="column">
+           <a href="{% url 'addresses' %}" class="btn btn-grad mx-1 mb-4 col-md form-button" type="button"  style="height:30px;":>Address</a>
+            <a href="{% url 'cargoes' %}" class="btn btn-grad mx-1 mb-4 col-md form-button" type="button"  style="height:30px;":>Cargoes</a>
+            <a href="{% url 'customers' %}" class="btn btn-grad mx-1 mb-4 col-md form-button" type="button"  style="height:30px;":>Customers</a>
+            <a href="{% url 'drivers' %}" class="btn btn-grad mx-1 mb-4 col-md form-button" type="button"  style="height:30px;":>Drivers</a>
+        <a href="{% url 'trucks' %}" class="btn btn-grad mx-1 mb-4 col-md form-button" type="button"  style="height:30px;":>Trucks</a>
+         <a href="{% url 'trailers' %}" class="btn btn-grad mx-1 mb-4 col-md form-button" type="button"  style="height:30px;":>Trailers</a>
+    </div>
+
+{% endblock content %}
+

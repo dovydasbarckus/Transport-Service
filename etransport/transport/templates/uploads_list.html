@@ -1,0 +1,28 @@
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+    < <div class="container d-flex flex-column justify-content-center" style="max-width:500px; height:80vh">
+        <h4 class=" mb-5" style="font-style:italic;">Files</h4>
+        <div class="form-group ">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="file" name="document">
+           <div class="d-flex flex-row justify-content-evenly">
+            <button class="btn btn-grad my-3" type="submit" style="min-width:100px">Uploads List</button>
+            <button class="btn btn-grad btn-delete my-3" onclick="javascript:history.back();" style="min-width:100px">Cancel</button>
+            </div>
+            </form>
+
+            {% if url %}
+                <p >Uploaded File: <a class="text-dark" href="{{ url }}">{{ url }} </a></p>
+            {% endif %}
+        </div>
+    </div>
+
+
+{% endblock content %}
+
+

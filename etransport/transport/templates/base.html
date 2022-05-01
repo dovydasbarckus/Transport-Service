@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AGILE TS</title>
+	<link rel="icon" type="image/x-icon" href="/images/shipped.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap4.min.css"  rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,900&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/cc03000d82.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}?{% now 'U' %}">
+</head>
+<body>
+
+
+<nav class="sidebar-navigation navbar-expand-sm" style="z-index:100;">
+	<div style="text-align:center; padding:1em 0;">
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="fa fa-bars" ></span>
+	</button>
+	</div>
+	<div class="collapse navbar-collapse" id="navbarNavDropdown">
+	<ul style="padding-left: 0px;">
+
+
+		<li name="home">
+			<a href="{% url 'home' %}"><i class="fa fa-home"></i></a>
+			<span class="tooltip">Home</span>
+		</li>
+		{% if user.is_authenticated %}
+		<li name="orders">
+			<a href="{% url 'orders' %}"><i class="fa fa-book"></i></a>
+			<span class="tooltip">Orders</span>
+		</li>
+		<li name="order_lines">
+			<a href="{% url 'order_lines' %}"><i class="fa fa-newspaper-o"></i></a>
+			<span class="tooltip">Order Lines</span>
+		</li>
+		<li name="links">
+			<a href="{% url 'links' %}"><i class="fa fa-truck"></i></a>
+			<span class="tooltip">Transport And Cargo</span>
+		</li>
+		<li name="uploads">
+			<a href="{% url 'uploads' %}"><i class="fa fa-cloud-upload"></i></a>
+			<span class="tooltip">Files</span>
+		</li>
+		<li name="profile">
+			<a href="{% url 'profile'%}"><i class="fa fa-user"></i></a>
+			<span class="tooltip">Profile</span>
+		</li>
+		{% endif %}
+
+		<li name="login">
+			{% if user.is_authenticated %}
+			<a href="{% url 'logout'%}?next=/home"><i class="fa fa-sign-out"></i></a>
+			<span class="tooltip"> {{ user.get_username }} Log Out</span>
+			{{ user.get_username }}
+			{% else %}
+			<a href="{% url 'login'%}?next={{request.path}}"><i class="fa fa-sign-in"></i></a>
+			<span class="tooltip">Log In</span>
+			{% endif %}
+		</li>
+
+	</ul>
+	</div>
+    </nav>
+
+
+
+        <div class="my-container">
+            <br>
+            {% block content %}
+            {% endblock content %}
+        </div>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+	<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap4.min.js"></script>
+	<script type="text/javascript" src="{% static 'js/sidebar.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/activate_button.js' %}"></script>
+	<script>
+		$('.myDataTable').DataTable({
+  			columnDefs: [
+    {
+        targets: -1,
+        className: 'dt-body-center'
+    }
+  ]
+});
+	</script>
+</body>
+</html>

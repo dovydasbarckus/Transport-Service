@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+    <div class="container mb-3 mt-3">
+        <p class="display-4" style="font-style:italic;">Order Lines</p>
+        <a class="btn btn-grad btn-create" href="{% url 'orderlines_create' %}" style="min-width:200px;">+ New Line</a>
+    </div>
+    <div class="container mb-3 mt-3">
+       <table class="table table-striped table-bordered myDataTable stripe " style="width:100%">
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Cargo</th>
+                <th>Weight</th>
+                <th>Customer</th>
+                <th>Status</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+
+            {% for line in orderlines  %}
+            <tr>
+                <td>{{line.order.id}}</td>
+                <td>{{line.cargo.cargo}}</td>
+                <td>{{line.cargo.weight}}</td>
+                <td>{{line.order.customer}}</td>
+                <td>{{line.get_status_display}}</td>
+                <td><a class="btn btn-grad mx-auto" href="{% url 'orderlines_details' line.pk %}" >Check</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    </div>
+
+
+
+{% endblock content %}

@@ -1,0 +1,243 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: "Lato", sans-serif;
+  line-height: 1;
+}
+
+body {
+  background-color: #f5f6f8;
+}
+
+.h1{
+    color:blue;
+}
+
+                        /*--------------- navigation ------------*/
+
+.sidebar-navigation {
+  display: inline;
+  position: fixed;
+  min-height: 100vh;
+  width: 80px;
+  background-color: #313443;
+
+}
+.sidebar-navigation ul {
+  text-align: center;
+  color: white;
+  margin: 0 auto;
+}
+.sidebar-navigation ul li {
+  padding: 28px 28px;
+  cursor: pointer;
+
+}
+.sidebar-navigation ul li i {
+  display: block;
+  font-size: 24px;
+
+}
+.sidebar-navigation ul li .tooltip {
+  display: inline-block;
+  position: absolute;
+  background-color: #313443;
+  padding: 8px 15px;
+  border-radius: 3px;
+  margin-top: -26px;
+  left: 90px;
+  opacity: 0;
+  visibility: hidden;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+}
+.sidebar-navigation ul li .tooltip:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: -4px;
+  top: 10px;
+  transform: rotate(45deg);
+  width: 10px;
+  height: 10px;
+  background-color: inherit;
+}
+
+.sidebar-navigation ul li:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+.sidebar-navigation ul li.active {
+  background-color: #22252e;
+  margin: 0 auto;
+
+}
+.sidebar-navigation ul li.active i {
+  color: #98d7ec;
+}
+
+a{
+    text-decoration:none;
+    color:#fff;
+}
+
+a:hover{
+    color:#fff;
+}
+
+
+            /*--------------- main template ------------*/
+.my-container{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    overflow: hidden;
+    margin-left:80px;
+    text-align:center;
+}
+
+            /*--------------- buttons ------------*/
+
+.btn-grad {background-image: linear-gradient(to right, #4776E6 0%, #8E54E9  51%, #4776E6  100%)}
+.btn-grad {
+
+    padding: 5px 15px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
+}
+
+.btn-grad:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}
+
+.btn-create {background-image: linear-gradient(to right, #FF512F 0%, #F09819  51%, #FF512F  100%)}
+.btn-create {
+    max-width:150px;
+    margin:0;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.btn-create:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}
+
+.btn-delete {background-image: linear-gradient(to right, #f857a6 0%, #ff5858  51%, #f857a6  100%)}
+
+
+ ------------ login ----------
+
+.login {
+  overflow: hidden;
+  background-color: white;
+  padding: 40px 30px 30px 30px;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: -webkit-transform 300ms, box-shadow 300ms;
+  -moz-transition: -moz-transform 300ms, box-shadow 300ms;
+  transition: transform 300ms, box-shadow 300ms;
+  box-shadow: 5px 10px 10px rgba(2, 128, 144, 0.2);
+}
+.login::before, .login::after {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-top-left-radius: 40%;
+  border-top-right-radius: 45%;
+  border-bottom-left-radius: 35%;
+  border-bottom-right-radius: 40%;
+  z-index: -1;
+}
+.login::before {
+  left: 40%;
+  bottom: -130%;
+  background-color: rgba(69, 105, 144, 0.15);
+  -webkit-animation: wawes 6s infinite linear;
+  -moz-animation: wawes 6s infinite linear;
+  animation: wawes 6s infinite linear;
+}
+.login::after {
+  left: 35%;
+  bottom: -125%;
+  background-color: rgba(2, 128, 144, 0.2);
+  -webkit-animation: wawes 7s infinite;
+  -moz-animation: wawes 7s infinite;
+  animation: wawes 7s infinite;
+}
+.login > input {
+  font-family: "Asap", sans-serif;
+  display: block;
+  border-radius: 5px;
+  font-size: 16px;
+  background: white;
+  width: 100%;
+  border: 0;
+  padding: 10px 10px;
+  margin: 15px -10px;
+}
+.login > button {
+  font-family: "Asap", sans-serif;
+  cursor: pointer;
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+  width: 80px;
+  border: 0;
+  padding: 10px 0;
+  margin-top: 10px;
+  margin-left: -5px;
+  border-radius: 5px;
+  background-color: #f45b69;
+  -webkit-transition: background-color 300ms;
+  -moz-transition: background-color 300ms;
+  transition: background-color 300ms;
+}
+.login > button:hover {
+  background-color: #f24353;
+}
+
+        /*--------------- media ------------*/
+@media only screen and (max-width: 420px) {
+    .sidebar-navigation {
+      display: inline-block;
+      min-height: 3vh;
+      width: 100vw;
+    }
+    .my-container{
+        margin-left:0;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+   .sidebar-navigation ul li .tooltip {
+      left: 200px;
+}
+
+
