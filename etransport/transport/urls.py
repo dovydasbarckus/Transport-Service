@@ -42,4 +42,6 @@ urlpatterns = [
     path('uploads/', views.UploadsListView.as_view(), name='uploads'),
     path('uploads/create', views.UploadsCreateView.as_view(), name='add_file'),
     path('uploads/<int:pk>', views.delete_item, name='delete_item'),
+    path('messages/', views.MessagesListView.as_view(), name='messages'),
+    path('messages/<int:pk>', views.MessagesDeleteView.as_view(), name='delete_message'),
 ]

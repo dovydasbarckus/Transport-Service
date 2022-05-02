@@ -4,9 +4,9 @@ from string import Template
 
 
 class SendEmail:
-    def __init__(self, name, surname, email, phone, question):
+    def __init__(self, name, company, email, phone, question):
         self.name = name
-        self.surname = surname
+        self.company = company
         self.email = email
         self.phone = phone
         self.question = question
@@ -23,7 +23,7 @@ class SendEmail:
         email['to'] = ''
         email['subject'] = 'Client Question'
 
-        email.set_content(template.substitute({'name': f'{self.name}', 'surname': f'{self.surname}', 'phone': f'{self.phone}', 'email': f'{self.email}', 'question': f'{self.question}'}), 'html')
+        email.set_content(template.substitute({'name': f'{self.name}', 'company': f'{self.company}', 'phone': f'{self.phone}', 'email': f'{self.email}', 'question': f'{self.question}'}), 'html')
 
         with smtplib.SMTP(host='smtp.gmail.com', port=587) as smtp:
             smtp.ehlo()

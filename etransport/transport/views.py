@@ -18,11 +18,13 @@ from django.views.generic import (
 def home(request):
     if request.method == 'POST':
         name = request.POST['fName']
-        surname = request.POST['lName']
+        company = request.POST['company']
         email = request.POST['email']
         phone = request.POST['phone']
         question = request.POST['question']
-        SendEmail(name, surname, email, phone, question)
+        new_msg = Message(name=name, company=company, email=email, phone=phone, question=question)
+        new_msg.save()
+        SendEmail(name, company, email, phone, question)
         return redirect('home')
     else:
         return render(request, 'home.html')
@@ -312,6 +314,18 @@ def delete_item(request, pk):
         item = Upload.objects.get(pk=pk)
         item.delete()
     return redirect('uploads')
+
+
+class MessagesListView(LoginRequiredMixin, ListView):
+    model = Message
+    context_object_name = 'messages'
+    template_name = 'messages.html'
+
+
+class MessagesDeleteView(LoginRequiredMixin, DeleteView):
+    model = Message
+    template_name = 'delete_message.html'
+    success_url = "/messages"
 
 
 @login_required

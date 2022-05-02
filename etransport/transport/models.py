@@ -176,3 +176,12 @@ class Upload(models.Model):
 
     def __str__(self):
         return f"{self.name}"
+
+
+class Message(models.Model):
+    name = models.CharField(max_length=200, blank=True, null=True)
+    company = models.CharField(max_length=200, blank=True, null=True)
+    email = models.EmailField(max_length=200, blank=True, null=True)
+    phone = models.CharField(max_length=200, blank=True, null=True)
+    question = models.TextField(max_length=200, blank=True, null=True)
+    date = models.DateTimeField(auto_now_add=True, blank=True, null=True)
