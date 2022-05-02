@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div>
+
+    <div class="container mb-3 mt-3">
+        <p class="display-4" style="font-style:italic;">Messages</p>
+    </div>
+    <div class="container mb-3 mt-3">
+       <table class="table table-striped table-bordered myDataTable stripe " style="width:100%">
+        <thead>
+            <tr>
+                <th>Client</th>
+                <th>Company</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Question</th>
+                <th>Message Got</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for message in messages  %}
+            <tr>
+                <td>{{message.name }}</td>
+                <td>{{message.company  }}</td>
+                <td>{{message.phone}}</td>
+                <td>{{message.email}}</td>
+                <td>{{message.question}}</td>
+                <td>{{message.date |date:"Y-m-d " }}</td>
+                <td><a class="btn btn-grad btn-delete mx-auto" href="{{ message.id }}" style="max-width:150px;">Delete</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+ </div>
+
+
+{% endblock content %}
+
+
